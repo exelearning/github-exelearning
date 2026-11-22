@@ -123,6 +123,10 @@ iDevice, presses Ctrl/Cmd+S, signs in and checks the commit sent to GitHub: one 
 
 ## Deploy
 
+Every push to `main` deploys to production through Cloudflare Workers Builds (build command
+`npm run build`, which fetches the editor on a fresh checkout; deploy command
+`npx wrangler deploy`). To deploy by hand:
+
 ```sh
 npm run deploy     # build + wrangler deploy (Worker, assets, both custom domains)
 ```

@@ -62,7 +62,7 @@ npm run typecheck
 npm test               # unit
 npm run test:e2e       # end to end (needs fetch-editor + fixture; HEADED=1 to watch)
 npm run dev            # http://localhost:8787 (app) + http://127.0.0.1:8787 (editor)
-npm run deploy         # production: only when asked
+npm run deploy         # production by hand: only when asked (a push to main also deploys)
 ```
 
 Before finishing a change, run `npm run lint`, `npm run typecheck` and `npm test`. Also run

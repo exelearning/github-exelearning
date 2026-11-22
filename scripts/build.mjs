@@ -4,7 +4,8 @@ import { cpSync, existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs
 import * as esbuild from 'esbuild';
 
 const appOrigins = (process.env.APP_ORIGINS ?? 'https://github.exelearning.dev').split(',');
-if (!existsSync('editor/index.html')) throw new Error('The editor is missing: run "npm run fetch-editor" first.');
+// A fresh checkout (Cloudflare Workers Builds) has no editor/: fetch the pinned release.
+if (!existsSync('editor/index.html')) await import('./fetch-editor.mjs');
 
 rmSync('dist', { recursive: true, force: true });
 cpSync('public', 'dist', { recursive: true });
