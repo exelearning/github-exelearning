@@ -170,3 +170,11 @@ One-time GitHub App setup:
   call are not supported.
 - **Cloudflare bot detection:** the zone's JS detection script is blocked by the app's CSP.
   Harmless: it only disables that detection on this page.
+
+## Issues and Support
+
+Issue tracking for this app is centralized in the main
+[`exelearning/exelearning`](https://github.com/exelearning/exelearning) repository.
+Please [open new issues there](https://github.com/exelearning/exelearning/issues/new),
+and browse [existing `github`-labeled issues](https://github.com/exelearning/exelearning/issues?q=is%3Aissue+label%3Agithub)
+before reporting a bug or requesting a feature.
