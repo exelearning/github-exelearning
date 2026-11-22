@@ -35,8 +35,8 @@ eXeLearning (see `RESEARCH.md`, *Path to eXeLearning core*).
 - **Untrusted input:** ZIPs from the editor go through `readElpx` (path and size limits);
   paths through `isSafePath`.
 - Use plain browser APIs and minimal dependencies (runtime: `fflate` only). No frameworks.
-- English for code, comments and docs. UI strings live in `src/app/i18n.ts`, in English and
-  Spanish.
+- English for code, comments and docs. UI strings live in `src/app/i18n.ts`, in the editor's
+  languages (en, es, ca, eu, gl, de); English is the default, the browser language picks the rest.
 
 ## Layout
 

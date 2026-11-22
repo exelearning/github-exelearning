@@ -372,7 +372,7 @@ async function showRepos() {
     form.classList.toggle('compact', !!token);
     $('repo-label').textContent = token ? t('otherRepo') : t('repoLabel');
     if (token) $('repos-box').insertBefore(form, $('repos-box').querySelector('.links'));
-    else $('divider').after(form);
+    else $('choices').append(form);
     if (!token) return;
     const api = createApi(token);
     const login = await api<{ login: string }>('/user').then((u) => u.login, () => '');
@@ -449,8 +449,8 @@ async function download() {
 async function copyBadge() {
     if (!project) return;
     const url = `${location.origin}/${query(project.target, project.branch === 'main' ? undefined : project.branch)}`;
-    const label = lang === 'es' ? 'Editar%20en' : 'Edit%20in';
-    const alt = lang === 'es' ? 'Editar en eXeLearning' : 'Edit in eXeLearning';
+    const label = encodeURIComponent(t('badgeLabel'));
+    const alt = t('badgeAlt');
     await navigator.clipboard.writeText(`[![${alt}](https://img.shields.io/badge/${label}-eXeLearning-26ddc7?labelColor=1f2937)](${url})`);
     toast(t('badgeCopied'));
 }
@@ -458,7 +458,7 @@ async function copyBadge() {
 async function main() {
     document.documentElement.lang = lang;
     const texts: Record<string, Parameters<typeof t>[0]> = {
-        tagline: 'tagline', 'repo-label': 'repoLabel', 'open-button': 'open', 'save-label': 'save', download: 'download', badge: 'copyBadge',
+        headline: 'headline', tagline: 'tagline', 'how-title': 'howItWorks', 'step1-title': 'step1Title', 'step1-text': 'step1Text', 'step2-title': 'step2Title', 'step2-text': 'step2Text', 'step3-title': 'step3Title', 'step3-text': 'step3Text', 'footer-note': 'footerNote', 'how-link': 'howItWorks', 'repo-label': 'repoLabel', 'open-button': 'open', 'save-label': 'save', download: 'download', badge: 'copyBadge',
         other: 'openOther', logout: 'logout', 'message-label': 'commitMessage', 'files-label': 'filesToSave',
         'pr-label': 'asPullRequest', 'cancel-save': 'cancel', 'confirm-save': 'save', 'signin-label': 'signIn', 'see-all': 'seeAll', 'see-all-hint': 'seeAllHint', 'or-open': 'orOpen', 'open-hint': 'publicHint', experimental: 'experimental', 'source-label': 'source', 'repos-title': 'yourRepos',
         'more-access': 'moreAccess', 'view-grid-label': 'gridView', 'view-list-label': 'listView', 'logout-landing': 'logout', pages: 'publishPages', 'pages-title': 'pagesTitle',
