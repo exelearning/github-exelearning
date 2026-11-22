@@ -3,15 +3,14 @@
 [![CI](https://github.com/exelearning/github-exelearning/actions/workflows/ci.yml/badge.svg)](https://github.com/exelearning/github-exelearning/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
 [![Live](https://img.shields.io/badge/live-github.exelearning.dev-26ddc7?labelColor=1f2937)](https://github.exelearning.dev)
+[![Status: experimental](https://img.shields.io/badge/status-experimental-orange)](RESEARCH.md#path-to-exelearning-core)
 
 **https://github.exelearning.dev** opens an eXeLearning resource stored in a GitHub repository
 (an `.elpx` unpacked in the repository) in the official eXeLearning editor and saves the changes
 back to the repository as a commit, or as a pull request. It is a static site plus one
 small Cloudflare Worker; there is no other server.
 
-> **Experiment.** It tests the whole cycle (open, edit, save, publish) to decide whether this
-> stays a separate app or moves into eXeLearning itself. See *Path to eXeLearning core* in
-> [RESEARCH.md](RESEARCH.md).
+> **Experimental.** May move into eXeLearning itself; see [RESEARCH.md](RESEARCH.md#path-to-exelearning-core).
 
 ## For teachers
 
