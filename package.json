@@ -28,7 +28,7 @@
     "esbuild": "^0.28.2",
     "playwright": "^1.65.1",
     "typescript": "^7.0.2",
-    "wrangler": "^4.165.0"
+    "wrangler": "^4.167.0"
   },
   "allowScripts": {
     "esbuild@0.28.2": true,
